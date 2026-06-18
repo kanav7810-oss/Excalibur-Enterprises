@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Excalibur AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" crossorigin="anonymous">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0a0a0a;
+  --bg-card: #111111;
+  --accent: #c9a84c;
+  --accent-dim: rgba(201, 168, 76, 0.12);
+  --text: #f5f2ed;
+  --text-secondary: #a8a29e;
+  --text-muted: #6b6560;
+  --border: rgba(201, 168, 76, 0.1);
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--accent); color: var(--bg); }
+
+.navbar {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 36px;
+  padding: 14px 32px; border-radius: 100px;
+  backdrop-filter: blur(40px) saturate(200%) brightness(1.15);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.08) 0%, rgba(10, 10, 10, 0.55) 40%, rgba(201, 168, 76, 0.04) 100%);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), 0 0 60px rgba(201, 168, 76, 0.04);
+  z-index: 1000;
+}
+.nav-logo {
+  font-family: var(--font-display); font-weight: 900; font-size: 18px;
+  letter-spacing: 0.02em; white-space: nowrap;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text);
+  transition: color 0.3s; position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--accent);
+  transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+
+.legal-page {
+  max-width: 800px; margin: 0 auto;
+  padding: 160px 48px 120px;
+}
+.legal-page .back-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 48px;
+  transition: gap 0.3s;
+}
+.legal-page .back-link:hover { gap: 14px; }
+.legal-page h1 {
+  font-family: var(--font-display); font-size: clamp(36px, 5vw, 52px);
+  font-weight: 900; line-height: 1.12; margin-bottom: 16px;
+}
+.legal-page .last-updated {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 48px;
+}
+.legal-page h2 {
+  font-family: var(--font-display); font-size: 24px; font-weight: 700;
+  margin: 48px 0 16px; color: var(--accent);
+}
+.legal-page p {
+  font-size: 15px; color: var(--text); line-height: 1.75; margin-bottom: 16px;
+}
+.legal-page ul {
+  margin: 0 0 16px 24px;
+}
+.legal-page li {
+  font-size: 15px; color: var(--text); line-height: 1.75; margin-bottom: 8px;
+}
+.legal-page a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.legal-page a:hover { text-decoration-color: var(--text); }
+
+.footer {
+  background: linear-gradient(145deg, rgba(5,5,5,0.95) 0%, rgba(10,10,10,0.9) 100%);
+  padding: 40px 48px;
+  border-top: 1px solid rgba(201, 168, 76, 0.08);
+}
+.footer-bottom {
+  max-width: 800px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy { font-size: 12px; color: var(--text-muted); }
+.footer-legal { display: flex; gap: 24px; }
+.footer-legal a { font-size: 12px; color: var(--text-muted); transition: color 0.3s; }
+.footer-legal a:hover { color: var(--text); }
+
+@media (max-width: 768px) {
+  .legal-page { padding: 120px 24px 80px; }
+  .nav-links { display: none; }
+  .footer { padding: 32px 24px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Excalibur</a>
+  <ul class="nav-links">
+    <li><a href="index.html#trucking">Trucking</a></li>
+    <li><a href="index.html#results">Results</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="legal-page">
+  <a href="index.html" class="back-link">&larr; Back to Home</a>
+  <h1>Privacy Policy</h1>
+  <p class="last-updated">Last Updated: June 18, 2026</p>
+
+  <h2>1. Introduction</h2>
+  <p>Excalibur AI ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services, including our web design, AI-powered business automation, and trucking industry solutions.</p>
+  <p>By accessing or using our website and services, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms of this policy, please do not access the site.</p>
+
+  <h2>2. Information We Collect</h2>
+  <p>We may collect information about you in a variety of ways, including:</p>
+  <ul>
+    <li><strong>Personal Data:</strong> Name, email address, phone number, company name, and business details you provide through our inquiry form or other communications.</li>
+    <li><strong>Business Information:</strong> Details about your trucking company, fleet size, operational workflows, and automation needs that you share with us during our discovery and planning process.</li>
+    <li><strong>Automated Data:</strong> Internet Protocol (IP) address, browser type, operating system, referring URLs, pages viewed, time spent on pages, and other diagnostic data collected automatically when you access our website.</li>
+    <li><strong>Cookies and Tracking:</strong> We may use cookies and similar tracking technologies to track activity on our website and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</li>
+  </ul>
+
+  <h2>3. How We Use Your Information</h2>
+  <p>We use the information we collect for the following purposes:</p>
+  <ul>
+    <li>To provide, operate, and maintain our website and services.</li>
+    <li>To respond to your inquiries, send service proposals, and communicate about your project.</li>
+    <li>To design and deliver custom websites and AI automation solutions for your business.</li>
+    <li>To improve our website, services, and customer experience.</li>
+    <li>To send periodic emails regarding your project status, service updates, or company news (you may opt out at any time).</li>
+    <li>To detect and prevent fraud, security breaches, or other malicious activity.</li>
+    <li>To comply with legal obligations and enforce our terms.</li>
+  </ul>
+
+  <h2>4. How We Share Your Information</h2>
+  <p>We do not sell your personal information. We may share your data with:</p>
+  <ul>
+    <li><strong>Service Providers:</strong> Third-party vendors who assist us in operating our website, conducting our business, or servicing you (e.g., hosting providers, email services, form processors). These parties are contractually obligated to keep your information confidential and use it only for the services we request.</li>
+    <li><strong>Legal Requirements:</strong> If required to do so by law or in response to valid requests by public authorities (e.g., a court or government agency).</li>
+    <li><strong>Business Transfers:</strong> In connection with any merger, sale of company assets, financing, or acquisition of all or a portion of our business by another company.</li>
+    <li><strong>With Your Consent:</strong> For any other purpose with your explicit consent.</li>
+  </ul>
+
+  <h2>5. Data Security</h2>
+  <p>We implement commercially reasonable administrative, technical, and physical security measures to protect your personal information. While we strive to use acceptable means to protect your personal data, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+  <h2>6. Data Retention</h2>
+  <p>We will retain your personal data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your data to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our legal agreements and policies.</p>
+
+  <h2>7. Your Rights</h2>
+  <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+  <ul>
+    <li>The right to access, update, or delete the information we have on you.</li>
+    <li>The right of rectification (to correct inaccurate data).</li>
+    <li>The right to object to our processing of your personal data.</li>
+    <li>The right of restriction (to request limited processing).</li>
+    <li>The right to data portability (to receive a copy of your data in a structured format).</li>
+    <li>The right to withdraw consent at any time where we relied on your consent to process your data.</li>
+  </ul>
+  <p>To exercise any of these rights, please contact us at <a href="mailto:excaledu@gmail.com">excaledu@gmail.com</a>.</p>
+
+  <h2>8. Third-Party Links</h2>
+  <p>Our website may contain links to third-party websites or services that are not operated by us. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+
+  <h2>9. Children's Privacy</h2>
+  <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children under 18. If we become aware that we have collected personal data from a child under 18, we will take steps to delete that information promptly.</p>
+
+  <h2>10. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+  <h2>11. Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy, please contact us:</p>
+  <ul>
+    <li>By email: <a href="mailto:excaledu@gmail.com">excaledu@gmail.com</a></li>
+    <li>By phone: <a href="tel:+19256288708">+1 (925) 628-8708</a></li>
+    <li>By mail: Excalibur AI, Bay Area, CA / Austin, TX</li>
+  </ul>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Excalibur AI. All rights reserved.</span>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
