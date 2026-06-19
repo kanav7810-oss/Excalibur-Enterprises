@@ -1535,7 +1535,7 @@ a:focus-visible, button:focus-visible, .form-input:focus-visible {
 </div>
 
 <!-- MAIN CONTENT WRAPPER -->
-<main id="main-content" style="opacity: 0; transform: translateY(12px); transition: opacity 0.8s ease, transform 0.8s ease;">
+<main id="main-content" style="opacity: 0; transform: translateY(12px); transition: opacity 0.6s ease, transform 0.6s ease; will-change: opacity, transform;">
 
 <!-- HERO -->
 <section class="hero gradient-mesh" id="home" role="banner">
@@ -1554,7 +1554,7 @@ a:focus-visible, button:focus-visible, .form-input:focus-visible {
       We Design Websites.<br><em>We Create Long-Term Growth Systems.</em>
     </h1>
     <p class="hero-subtitle reveal">
-      Custom web design and AI-powered business automation, built for trucking companies that want to scale — we design your digital presence and automate your operations from dispatch to invoicing.
+      Custom web design and AI-powered business automation, built for trucking companies that want to scale. We design your digital presence and automate your operations from dispatch to invoicing.
     </p>
     <div class="hero-actions">
       <a href="#trucking" class="btn-primary magnetic reveal">Trucking Solutions</a>
@@ -1584,7 +1584,7 @@ a:focus-visible, button:focus-visible, .form-input:focus-visible {
     <div class="wing-card reveal glass-glow" data-tilt>
       <div class="wing-tag">Trucking Division</div>
       <h3 class="wing-title">Web Design &amp; AI Automation (Upon Audit) &middot; Trucking</h3>
-      <p class="wing-desc">We build your company's website and automate your operations, dispatch, invoicing, and back office — all powered by AI (upon audit).</p>
+      <p class="wing-desc">We build your company's website and automate your operations, dispatch, invoicing, and back office, all powered by AI (upon audit).</p>
       <a href="#trucking" class="wing-cta">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
     <div class="wing-card reveal glass-glow" data-tilt>
@@ -2217,7 +2217,7 @@ function initThree() {
   renderer.setClearColor(0x000000, 0);
 
   /* Liquid metal plane */
-  const geo = new THREE.PlaneGeometry(6, 4, 128, 128);
+  const geo = new THREE.PlaneGeometry(6, 4, 64, 64);
   const mat = new THREE.ShaderMaterial({
     vertexShader,
     fragmentShader,
@@ -2234,7 +2234,7 @@ function initThree() {
   scene.add(particles);
 
   /* Ambient particles behind the mesh */
-  const pCount = 300;
+  const pCount = 150;
   const pGeo = new THREE.BufferGeometry();
   const pPos = new Float32Array(pCount * 3);
   for (let i = 0; i < pCount; i++) {
@@ -2968,13 +2968,13 @@ function runPreloader() {
     anime({
       targets: fill,
       width: '100%',
-      duration: 1800,
-      easing: 'easeInOutQuad',
+      duration: 800,
+      easing: 'easeOutQuad',
       complete: () => {
         anime({
           targets: preloader,
           opacity: [1, 0],
-          duration: 400,
+          duration: 250,
           easing: 'easeOutQuad',
           complete: () => {
             preloader.style.display = 'none';
@@ -2988,12 +2988,18 @@ function runPreloader() {
 
 /* ===== INIT ===== */
 document.addEventListener('DOMContentLoaded', () => {
-  /* Init heavy libs immediately — preloader covers the cost */
-  try { initThree(); animateThree(); } catch(e) { console.warn('Three.js:', e.message); }
+  /* Init GSAP immediately for scroll animations */
   try { initGSAP(); } catch(e) { console.warn('GSAP:', e.message); }
+
+  /* Init Three.js after a short delay to prioritize page render */
+  setTimeout(() => {
+    try { initThree(); animateThree(); } catch(e) { console.warn('Three.js:', e.message); }
+  }, 100);
+
+  /* Anime.js sequences */
   try { initAnimeSequences(); } catch(e) { console.warn('Anime.js:', e.message); }
 
-  /* Then reveal — smooth ease-in */
+  /* Then reveal */
   runPreloader().then(() => {
     const main = document.getElementById('main-content');
     requestAnimationFrame(() => {
