@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3312830605556685');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=3312830605556685&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Venture Sprint — Build Something Real Before College</title>
+<meta name="description" content="Student Venture Sprint is a 4-week, 1:1 venture-building program where high school students work directly with an expert venture partner to turn one idea into a project, nonprofit, or business with a concrete launch foundation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" crossorigin="anonymous">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f4f8fc;
+  --navy: #0a1a3a;
+  --text-secondary: #4a5568;
+  --text-muted: #7c8aa0;
+  --accent-blue: #2dc1e8;
+  --accent-blue-deep: #1a7fb0;
+  --accent-gradient: linear-gradient(135deg, #2dc1e8, #a855f7, #f97316);
+  --border: rgba(10, 26, 58, 0.1);
+  --border-hover: rgba(45, 193, 232, 0.35);
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 16px;
+}
+h1, h2, h3 { font-family: var(--font-display); color: var(--navy); font-weight: 700; line-height: 1.15; }
+h1 { font-size: clamp(38px, 6vw, 68px); font-weight: 900; }
+h2 { font-size: clamp(28px, 4vw, 42px); }
+h3 { font-size: clamp(19px, 2.4vw, 23px); }
+p { color: var(--text-secondary); }
+section { padding: 96px 0; position: relative; }
+section.alt { background: var(--bg-alt); }
+.section-head { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+.section-head p { font-size: 18px; margin-top: 14px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-weight: 600; font-size: 16px;
+  padding: 16px 32px; border-radius: 999px; cursor: pointer;
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo);
+  border: none;
+}
+.btn-primary {
+  background: var(--accent-gradient);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(45, 193, 232, 0.28);
+}
+.btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 14px 32px rgba(168, 85, 247, 0.32); }
+.btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--border);
+}
+.btn-secondary:hover { border-color: var(--accent-blue); color: var(--accent-blue-deep); transform: translateY(-2px); }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1160px; margin: 0 auto; padding: 16px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.wordmark {
+  font-family: var(--font-display); font-weight: 900; font-size: 19px;
+  background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
+  white-space: nowrap;
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a:not(.btn) {
+  font-size: 14px; font-weight: 500; color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.nav-links a:not(.btn):hover { color: var(--accent-blue-deep); }
+.nav-back {
+  font-size: 13px; color: var(--text-muted); font-weight: 500;
+  border-left: 1px solid var(--border); padding-left: 20px;
+}
+.nav-back:hover { color: var(--accent-blue-deep); }
+.nav-cta { padding: 10px 22px; font-size: 14px; }
+.nav-mobile-links { display: none; }
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+}
+
+/* Hero */
+.hero { padding: 88px 0 80px; text-align: center; background: linear-gradient(180deg, #f4f8fc 0%, #ffffff 100%); }
+.hero h1 { max-width: 900px; margin: 0 auto 24px; }
+.hero-sub { max-width: 700px; margin: 0 auto 28px; font-size: 19px; line-height: 1.75; }
+.trust-line {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 18px;
+  font-size: 13px; color: var(--text-muted); font-weight: 500; margin-bottom: 36px;
+}
+.trust-line span:not(:last-child)::after { content: '|'; margin-left: 18px; color: var(--border-hover); }
+.hero-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+/* Outcome bar */
+.outcome-bar { padding: 56px 0; background: var(--navy); }
+.outcome-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border-radius: 18px; overflow: hidden; }
+.outcome-tile {
+  background: var(--navy); padding: 30px 20px; text-align: center; position: relative;
+}
+.outcome-tile::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent-gradient);
+}
+.outcome-tile span {
+  display: block; color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 16px; line-height: 1.4;
+}
+@media (max-width: 760px) {
+  .outcome-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Problem */
+.problem-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: start; max-width: 1000px; margin: 0 auto; }
+.problem-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.problem-list li {
+  position: relative; padding-left: 28px; font-size: 16px; color: var(--text-secondary);
+}
+.problem-list li::before {
+  content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent-gradient);
+}
+.key-line {
+  font-family: var(--font-display); font-size: 22px; font-style: italic; color: var(--navy);
+  border-left: 3px solid; border-image: var(--accent-gradient) 1; padding-left: 22px; line-height: 1.5;
+}
+
+/* What SVS does */
+.chip-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 28px 0 36px; }
+.chip {
+  font-size: 14px; font-weight: 500; padding: 9px 18px; border-radius: 999px;
+  background: #fff; border: 1px solid var(--border); color: var(--navy);
+}
+.clarifier-box {
+  max-width: 820px; margin: 0 auto; background: var(--bg-alt); border-radius: 20px; padding: 32px 36px;
+  border: 1px solid var(--border);
+}
+.clarifier-box p:first-child { color: var(--navy); font-weight: 600; margin-bottom: 14px; }
+.criteria-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.criteria-list li { font-size: 15px; padding-left: 22px; position: relative; }
+.criteria-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent-blue-deep); font-weight: 600; }
+
+/* How it works */
+.week-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1080px; margin: 0 auto; }
+.week-card {
+  background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 28px 24px;
+  position: relative; transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo);
+}
+.week-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(10,26,58,0.08); border-color: var(--border-hover); }
+.week-num {
+  display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+  border-radius: 50%; background: var(--accent-gradient); color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 16px;
+}
+.week-card h3 { margin-bottom: 6px; }
+.week-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent-blue-deep); margin-bottom: 10px; display: block; }
+.week-card ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.week-card ul li { font-size: 14px; color: var(--text-secondary); padding-left: 14px; position: relative; }
+.week-card ul li::before { content: '•'; position: absolute; left: 0; color: var(--accent-blue); }
+@media (max-width: 900px) {
+  .week-track { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .week-track { grid-template-columns: 1fr; }
+}
+
+/* Venture partner */
+.partner-wrap { max-width: 760px; margin: 0 auto; }
+.partner-wrap p { font-size: 17px; margin-bottom: 18px; }
+.partner-key {
+  margin-top: 28px; font-family: var(--font-display); font-style: italic; font-size: 20px; color: var(--navy);
+  padding: 22px 28px; background: var(--bg-alt); border-radius: 16px; border: 1px solid var(--border);
+}
+
+/* Gains */
+.gains-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 980px; margin: 0 auto; }
+.gains-col h3 { margin-bottom: 18px; }
+.gains-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.gains-col ul li {
+  font-size: 15px; color: var(--text-secondary); padding-left: 24px; position: relative;
+}
+.gains-col ul li::before {
+  content: '✓'; position: absolute; left: 0; color: var(--accent-blue-deep); font-weight: 700; font-size: 13px; top: 2px;
+}
+@media (max-width: 700px) { .gains-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+/* Parent trust Q&A */
+.qa-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+.qa-item { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; }
+.qa-item h3 { font-size: 17px; margin-bottom: 8px; color: var(--accent-blue-deep); font-family: var(--font-body); font-weight: 700; }
+.qa-item p { font-size: 15px; margin: 0; }
+
+/* Guarantee band */
+.guarantee-band {
+  background: var(--navy); border-radius: 28px; padding: 56px 48px; text-align: center; max-width: 980px; margin: 0 auto;
+  position: relative; overflow: hidden;
+}
+.guarantee-band::before {
+  content: ''; position: absolute; top: -40%; right: -10%; width: 60%; height: 180%;
+  background: var(--accent-gradient); opacity: 0.18; filter: blur(80px);
+}
+.guarantee-band h2 { color: #fff; position: relative; }
+.guarantee-band p { color: rgba(255,255,255,0.75); max-width: 680px; margin: 18px auto 0; position: relative; font-size: 16px; }
+
+/* Who for */
+.fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1080px; margin: 0 auto; }
+.fit-col { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 28px 24px; }
+.fit-col h3 { font-size: 16px; margin-bottom: 16px; letter-spacing: 0.01em; }
+.fit-col.good h3 { color: #1a9f6b; }
+.fit-col.notreq h3 { color: var(--accent-blue-deep); }
+.fit-col.bad h3 { color: #d1495b; }
+.fit-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.fit-col ul li { font-size: 14px; color: var(--text-secondary); padding-left: 20px; position: relative; }
+.fit-col.good ul li::before { content: '✓'; position: absolute; left: 0; color: #1a9f6b; }
+.fit-col.notreq ul li::before { content: '–'; position: absolute; left: 0; color: var(--accent-blue-deep); }
+.fit-col.bad ul li::before { content: '✕'; position: absolute; left: 0; color: #d1495b; }
+@media (max-width: 860px) { .fit-grid { grid-template-columns: 1fr; } }
+
+/* Founding cohort */
+.cohort-box { max-width: 780px; margin: 0 auto; text-align: center; }
+.cohort-box p { font-size: 16px; margin: 0 auto 12px; max-width: 620px; }
+.cohort-box .btn { margin-top: 24px; }
+
+/* FAQ (reused pattern) */
+.faq-list { display: flex; flex-direction: column; gap: 10px; max-width: 820px; margin: 0 auto; width: 100%; }
+.faq-item {
+  border: 1px solid var(--border); border-radius: 18px; overflow: hidden; background: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.faq-item:hover { border-color: var(--border-hover); box-shadow: 0 4px 24px rgba(10,26,58,0.06); }
+.faq-item.open { border-color: var(--accent-blue); box-shadow: 0 6px 32px rgba(10,26,58,0.08); }
+.faq-question {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  gap: 20px; padding: 22px 28px; text-align: left; background: none; border: none; cursor: pointer;
+  color: var(--navy); font-family: var(--font-body); font-size: 16px; font-weight: 600; line-height: 1.4;
+  transition: background 0.2s;
+}
+.faq-question:hover { background: var(--bg-alt); }
+.faq-chevron { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent-blue-deep); transition: transform 0.45s var(--ease-out-expo); }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s var(--ease-out-expo); }
+.faq-item.open .faq-answer { grid-template-rows: 1fr; }
+.faq-answer-inner { overflow: hidden; }
+.faq-answer p { padding: 0 28px 24px; font-size: 15px; line-height: 1.8; color: var(--text-secondary); border-top: 1px solid var(--border); margin: 0; padding-top: 18px; }
+@media (max-width: 768px) {
+  .faq-question { padding: 18px 20px; font-size: 15px; }
+  .faq-answer p { padding: 16px 20px 20px; }
+}
+
+/* Final CTA */
+.final-cta { text-align: center; background: linear-gradient(180deg, #ffffff 0%, #f4f8fc 100%); }
+.final-cta .position-line {
+  font-family: var(--font-display); font-style: italic; font-size: clamp(22px, 3vw, 30px);
+  max-width: 760px; margin: 0 auto 32px; color: var(--navy); line-height: 1.4;
+}
+.final-cta .btn { margin: 0 6px; }
+
+/* Footer */
+footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--border); }
+footer p { font-size: 13px; color: var(--text-muted); }
+footer a { color: var(--accent-blue-deep); font-weight: 500; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 700px) {
+  section { padding: 64px 0; }
+  .problem-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="wordmark">Student Venture Sprint</a>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#guarantee">Guarantee</a>
+      <a href="/svs/about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="/" class="nav-back">excal.org ↗</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="https://tally.so/r/RGqpWP" target="_blank" rel="noopener noreferrer">Apply</a>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow reveal">Student Venture Sprint</div>
+    <h1 class="reveal">Build something real before college.</h1>
+    <p class="hero-sub reveal">Student Venture Sprint is a 4-week, 1:1 venture-building program where high school students work directly with an expert venture partner to turn one idea into a project, nonprofit, or business with a concrete launch foundation.</p>
+    <div class="trust-line reveal">
+      <span>Founding cohort limited to 5 students</span>
+      <span>Applications close September 25</span>
+      <span>Built directly with a profitable high school entrepreneur</span>
+    </div>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-primary" href="https://tally.so/r/RGqpWP" target="_blank" rel="noopener noreferrer">Apply for Founding Cohort</a>
+      <a class="btn btn-secondary" href="#how-it-works">View Program Structure</a>
+    </div>
+  </div>
+</header>
+
+<!-- 2. OUTCOME BAR -->
+<div class="outcome-bar">
+  <div class="wrap">
+    <div class="outcome-grid">
+      <div class="outcome-tile reveal"><span>Completely 1:1.</span></div>
+      <div class="outcome-tile reveal"><span>4 Weeks, Structured Curriculum</span></div>
+      <div class="outcome-tile reveal"><span>Launch + Guidance Guarantee</span></div>
+      <div class="outcome-tile reveal"><span>Post Program Scaling Plan Included</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. THE PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal">The Problem</div>
+      <h2 class="reveal">Most students collect activities. Few build proof.</h2>
+    </div>
+    <div class="problem-grid">
+      <ul class="problem-list reveal">
+        <li>Clubs, summer programs, and certificates often prove participation</li>
+        <li>They rarely prove ownership, initiative, or execution</li>
+        <li>Many students have ideas but lack structure, feedback, and urgency</li>
+        <li>College may reward the story, but real work has to come first</li>
+      </ul>
+      <p class="key-line reveal">SVS helps students build something real enough that it does not need to be exaggerated.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. WHAT SVS ACTUALLY DOES -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal">What SVS Actually Does</div>
+      <h2 class="reveal">From idea to launch foundation.</h2>
+      <p class="reveal">Students work 1:1 to choose, test, build, and launch one serious project.</p>
+    </div>
+    <div class="chip-row reveal">
+      <span class="chip">Business</span>
+      <span class="chip">Nonprofit</span>
+      <span class="chip">Community project</span>
+      <span class="chip">Education project</span>
+      <span class="chip">Digital resource</span>
+      <span class="chip">Content/community platform</span>
+      <span class="chip">Local service venture</span>
+    </div>
+    <div class="clarifier-box reveal">
+      <p>The goal is not to pick the most impressive idea. The goal is to pick the idea with the best overlap between:</p>
+      <ul class="criteria-list">
+        <li>Student skill</li>
+        <li>Personal access</li>
+        <li>Real demand</li>
+        <li>Marketability</li>
+        <li>Ability to execute in 4 weeks</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 5. HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal">How It Works</div>
+      <h2 class="reveal">Four weeks, one venture.</h2>
+    </div>
+    <div class="week-track">
+      <div class="week-card reveal">
+        <span class="week-num">1</span>
+        <span class="week-tag">Week 1</span>
+        <h3>Direction</h3>
+        <ul>
+          <li>Skills audit</li>
+          <li>Opportunity profile</li>
+          <li>Idea selection</li>
+          <li>ICP definition</li>
+          <li>4-week roadmap</li>
+        </ul>
+      </div>
+      <div class="week-card reveal">
+        <span class="week-num">2</span>
+        <span class="week-tag">Week 2</span>
+        <h3>Validation</h3>
+        <ul>
+          <li>Talk to real people</li>
+          <li>Test demand</li>
+          <li>Collect feedback</li>
+          <li>Refine or pivot</li>
+        </ul>
+      </div>
+      <div class="week-card reveal">
+        <span class="week-num">3</span>
+        <span class="week-tag">Week 3</span>
+        <h3>Foundation</h3>
+        <ul>
+          <li>Landing page or public presence</li>
+          <li>Pitch</li>
+          <li>Outreach system</li>
+          <li>Tracker</li>
+          <li>Pilot setup</li>
+        </ul>
+      </div>
+      <div class="week-card reveal">
+        <span class="week-num">4</span>
+        <span class="week-tag">Week 4</span>
+        <h3>Launch</h3>
+        <ul>
+          <li>Outreach push</li>
+          <li>Early responses</li>
+          <li>First traction signals</li>
+          <li>90-day roadmap</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. YOUR VENTURE PARTNER -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal">Your Venture Partner</div>
+      <h2 class="reveal">Guidance from someone who has actually done it.</h2>
+    </div>
+    <div class="partner-wrap">
+      <p class="reveal">Your venture partner is a former high school entrepreneur who built multiple profitable ventures while still in high school, including one that scaled to multi-five-figure revenue in just 3 months at age 17. Fewer than a handful of people your student's age have ever done that. It is not a story that can be taught by a teacher, a guidance counselor, or a professor — because they haven't done it. It is not something a cold email to a random founder can replicate either, because that person hasn't stood exactly where your student is standing: a highschooler with no capital, no network, and no track record, who then built something that generated real revenue from that exact starting point.</p>
+      <p class="reveal">That is why the guidance in SVS is genuinely 1:1, hands-on building time, not generic advice. Your student works directly with someone who has done the exact thing they are trying to do, from the exact same starting position.</p>
+      <p class="reveal">This is not luck, and it is not random hustle. It is a system — a repeatable process that, once the fundamentals and the 1:1 working relationship are established, your student can exploit again and again, long after the cohort ends. Part of that system is a principle we call attention as currency: learning to leverage what you build to attract opportunities you didn't think were available to you — colleges, internships, further ventures, press, and network access — so the build compounds into opportunity rather than ending when the sprint does.</p>
+      <p class="reveal">As proof of the system at work, not as a trophy: the founder was accepted to Emory, UIUC, UCSD, and UW-Seattle, and waitlisted at NYU — while running a real revenue-generating venture in parallel. The system includes learning how to run a real venture build alongside a competitive college application process, and how to use that build as the centerpiece of your own applicant narrative and builder-spirit story.</p>
+      <p class="partner-key reveal">Guidance from an expert who has actually built and sold something is worth paying for. Guidance from a recent high school grad with an opinion is not. No one else has stood in your student's exact position and built something that generated real revenue from it.</p>
+      <p class="reveal"><a href="/svs/about" style="color: var(--accent-blue-deep); font-weight: 600;">Learn more about the system →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. WHAT STUDENTS GAIN -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal">What Students Gain</div>
+      <h2 class="reveal">The venture is the vehicle. The real outcome is capability.</h2>
+    </div>
+    <div class="gains-grid">
+      <div class="gains-col reveal">
+        <h3>Gains</h3>
+        <ul>
+          <li>Clear venture idea</li>
+          <li>Defined ICP</li>
+          <li>Validated problem</li>
+          <li>Public-facing project foundation</li>
+          <li>Outreach system</li>
+          <li>Real feedback from real people</li>
+          <li>Pilot or first launch push</li>
+          <li>Measurable traction signals</li>
+          <li>90-day continuation plan</li>
+        </ul>
+      </div>
+      <div class="gains-col reveal">
+        <h3>Skills Gained</h3>
+        <ul>
+          <li>Sales thinking</li>
+          <li>Customer/user conversations</li>
+          <li>Communication</li>
+          <li>Follow-up</li>
+          <li>Adaptability</li>
+          <li>Rejection handling</li>
+          <li>Execution discipline</li>
+          <li>Commercial judgment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. WHY PARENTS TRUST THIS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal">Why Parents Trust This</div>
+      <h2 class="reveal">Built to protect against empty outcomes.</h2>
+    </div>
+    <div class="qa-list">
+      <div class="qa-item reveal">
+        <h3>Is this just resume padding?</h3>
+        <p>No. This is not college counseling, essay coaching, fake nonprofit creation, or a certificate program. The student must own the work, and the venture partner guides the build process directly.</p>
+      </div>
+      <div class="qa-item reveal">
+        <h3>Will my student actually build something?</h3>
+        <p>Yes. The 4-week sprint is structured around direction, validation, foundation, and launch, with the venture partner guiding the build process directly at every step.</p>
+      </div>
+      <div class="qa-item reveal">
+        <h3>Is this college counseling?</h3>
+        <p>No. SVS is not college counseling and not essay coaching. It is a venture-building program focused on real work, not admissions strategy.</p>
+      </div>
+      <div class="qa-item reveal">
+        <h3>What if the idea changes?</h3>
+        <p>That is expected and part of the process. Week 2 exists to test demand and refine or pivot based on real feedback from real people.</p>
+      </div>
+      <div class="qa-item reveal">
+        <h3>What if nothing concrete happens?</h3>
+        <p>Not a concern here — students must own the work, and the venture partner guides the build process directly so a concrete foundation gets built rather than just an idea.</p>
+      </div>
+      <div class="qa-item reveal">
+        <h3>How much time does this require?</h3>
+        <p>The student must commit real, focused time over 4 weeks to own the work — this is not a passive course or a mass group program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. LAUNCH FOUNDATION GUARANTEE -->
+<section id="guarantee">
+  <div class="wrap">
+    <div class="guarantee-band reveal">
+      <div class="eyebrow reveal">Launch Foundation Guarantee</div>
+      <h2>Your student will not leave with just an idea.</h2>
+      <p>Parents should not expect guaranteed revenue, admissions outcomes, press, or viral traction. What SVS guarantees is that the student will leave with a concrete venture foundation and a clear next step. If that foundation is not in place by the end of 4 weeks, work continues at no extra cost until it is.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. WHO WE ARE LOOKING FOR -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal">Who We Are Looking For</div>
+      <h2 class="reveal">Who this is for.</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col good reveal">
+        <h3>Good Fit</h3>
+        <ul>
+          <li>High school student with ideas but limited structure</li>
+          <li>Willing to work seriously for 4 weeks</li>
+          <li>Open to direct feedback</li>
+          <li>Willing to talk to real people</li>
+          <li>Wants to build beyond school assignments</li>
+          <li>Can commit 3 to 5 focused hours per week minimum</li>
+        </ul>
+      </div>
+      <div class="fit-col notreq reveal">
+        <h3>Not Required</h3>
+        <ul>
+          <li>Business experience</li>
+          <li>Perfect grades</li>
+          <li>Polished idea</li>
+          <li>Existing nonprofit</li>
+          <li>Coding skills</li>
+          <li>Large social following</li>
+        </ul>
+      </div>
+      <div class="fit-col bad reveal">
+        <h3>Not a Fit</h3>
+        <ul>
+          <li>Parent wants it more than student</li>
+          <li>Student refuses outreach</li>
+          <li>Student only wants a resume line</li>
+          <li>Student is not willing to pivot</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. FOUNDING COHORT -->
+<section>
+  <div class="wrap cohort-box">
+    <div class="eyebrow reveal">Founding Cohort</div>
+    <h2 class="reveal">Founding cohort: 5 students.</h2>
+    <p class="reveal">Limited because work is direct and 1:1. Founding students receive the most hands-on version of the sprint.</p>
+    <p class="reveal">Applications close September 25. Fit call required before acceptance.</p>
+    <a class="btn btn-primary reveal" href="https://tally.so/r/RGqpWP" target="_blank" rel="noopener noreferrer">Apply for Founding Cohort</a>
+  </div>
+</section>
+
+<!-- 12. FAQ -->
+<section class="alt" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal">FAQ</div>
+      <h2 class="reveal">Common Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>What does "launch foundation" mean?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner"><p>A launch foundation is a concrete venture foundation and a clear next step — not guaranteed revenue, admissions outcomes, press, or viral traction, but the real building blocks (a validated idea, a public-facing presence, an outreach system, and a 90-day roadmap) needed to keep moving forward.</p></div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>Does my student need an idea already?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner"><p>No. Week 1 is Direction — a skills audit, opportunity profile, and idea selection process — so students who have ideas but lack structure are exactly who this is for.</p></div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is this college counseling?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner"><p>No. This is not college counseling, essay coaching, fake nonprofit creation, or a certificate program. It is a direct, 1:1 venture-building program.</p></div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>How is this different from a summer program?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner"><p>SVS is not a passive course or mass group program. Students work directly 1:1 with a venture partner who built a profitable venture to multi-five-figure revenue while in high school, over a focused 4-week sprint with a guaranteed launch foundation.</p></div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>How much time does this require?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner"><p>Students should be able to commit 3 to 5 focused hours per week minimum across the 4-week sprint.</p></div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>What happens after 4 weeks?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner"><p>Week 4 ends with an outreach push, early responses, first traction signals, and a 90-day continuation roadmap. If the launch foundation is not in place by the end of 4 weeks, work continues at no extra cost until it is.</p></div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>What if the idea changes?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner"><p>That is expected. Week 2 (Validation) is built specifically to talk to real people, test demand, collect feedback, and refine or pivot the idea.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <p class="position-line reveal">"Most programs help students look impressive. SVS helps students build proof."</p>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-primary" href="https://tally.so/r/RGqpWP" target="_blank" rel="noopener noreferrer">Apply for Founding Cohort</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Student Venture Sprint is a program by <a href="/">Excalibur AI</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function() {
+  /* Scroll reveal */
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+  /* FAQ accordion */
+  var items = document.querySelectorAll('.faq-item');
+  items.forEach(function(item) {
+    var btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', function() {
+      var isOpen = item.classList.contains('open');
+      items.forEach(function(i) {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* Subtle magnetic hover on primary buttons */
+  document.querySelectorAll('.btn-primary').forEach(function(btn) {
+    btn.addEventListener('mousemove', function(e) {
+      var r = btn.getBoundingClientRect();
+      var x = (e.clientX - r.left - r.width / 2) * 0.12;
+      var y = (e.clientY - r.top - r.height / 2) * 0.12;
+      btn.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+    });
+    btn.addEventListener('mouseleave', function() {
+      btn.style.transform = '';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
